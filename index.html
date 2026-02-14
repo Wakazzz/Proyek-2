@@ -4,362 +4,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Profil Saya</title>
-    <style>
-        .portofolio-image img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    display: block;
-}
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
-            min-height: 100vh;
-            color: #fff;
-        }
-
-        /* ========================================
-           SECTION 1 : MENU / NAVIGATION
-        ======================================== */
-        .section-menu {
-            background: rgba(255, 255, 255, 0.05);
-            backdrop-filter: blur(10px);
-            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-            padding: 20px 0;
-            position: sticky;
-            top: 0;
-            z-index: 100;
-        }
-
-        .menu-container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 20px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-
-        .logo {
-            font-size: 28px;
-            font-weight: bold;
-            background: linear-gradient(90deg, #e94560, #ff6b6b);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-        }
-
-        .nav-links {
-            display: flex;
-            gap: 30px;
-            list-style: none;
-        }
-
-        .nav-links a {
-            color: #fff;
-            text-decoration: none;
-            font-size: 16px;
-            padding: 8px 16px;
-            border-radius: 25px;
-            transition: all 0.3s ease;
-        }
-
-        .nav-links a:hover {
-            background: rgba(233, 69, 96, 0.2);
-            color: #e94560;
-        }
-
-        /* ========================================
-           SECTION 2 : HEADER (Judul Kiri - Gambar Kanan)
-        ======================================== */
-        .section-header {
-            max-width: 1200px;
-            margin: 60px auto;
-            padding: 0 20px;
-        }
-
-        .header-content {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            gap: 60px;
-        }
-
-        .header-text {
-            flex: 1;
-        }
-
-        .header-text h1 {
-            font-size: 52px;
-            margin-bottom: 20px;
-            line-height: 1.2;
-        }
-
-        .header-text h1 span {
-            background: linear-gradient(90deg, #e94560, #ff6b6b, #feca57);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-        }
-
-        .header-text p {
-            font-size: 18px;
-            color: rgba(255, 255, 255, 0.7);
-            line-height: 1.8;
-            margin-bottom: 30px;
-        }
-
-        .btn-primary {
-            display: inline-block;
-            padding: 14px 35px;
-            background: linear-gradient(90deg, #e94560, #ff6b6b);
-            color: #fff;
-            text-decoration: none;
-            border-radius: 30px;
-            font-weight: 600;
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-        }
-
-        .btn-primary:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 10px 30px rgba(233, 69, 96, 0.4);
-        }
-
-        .header-image {
-            flex: 1;
-            display: flex;
-            justify-content: center;
-        }
-
-        .header-image img {
-            width: 400px;
-            height: 400px;
-            object-fit: cover;
-            border-radius: 30px;
-            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.4);
-            border: 3px solid rgba(255, 255, 255, 0.1);
-        }
-
-        /* ========================================
-           SECTION 3 : BIODATA (6 Box - 2 Baris 3 Kolom)
-        ======================================== */
-        .section-biodata {
-            max-width: 1200px;
-            margin: 80px auto;
-            padding: 0 20px;
-        }
-
-        .section-title {
-            text-align: center;
-            font-size: 36px;
-            margin-bottom: 50px;
-        }
-
-        .section-title span {
-            background: linear-gradient(90deg, #e94560, #ff6b6b);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-        }
-
-        .biodata-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            grid-template-rows: repeat(2, 1fr);
-            gap: 25px;
-        }
-
-        .biodata-box {
-            background: rgba(255, 255, 255, 0.05);
-            backdrop-filter: blur(10px);
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            border-radius: 20px;
-            padding: 30px;
-            text-align: center;
-            transition: all 0.3s ease;
-        }
-
-        .biodata-box:hover {
-            transform: translateY(-10px);
-            border-color: rgba(233, 69, 96, 0.5);
-            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.3);
-        }
-
-        .biodata-icon {
-            width: 60px;
-            height: 60px;
-            background: linear-gradient(135deg, #e94560, #ff6b6b);
-            border-radius: 15px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin: 0 auto 20px;
-            font-size: 28px;
-        }
-
-        .biodata-box h3 {
-            font-size: 20px;
-            margin-bottom: 10px;
-            color: #fff;
-        }
-
-        .biodata-box p {
-            font-size: 15px;
-            color: rgba(255, 255, 255, 0.6);
-            line-height: 1.6;
-        }
-
-        /* ========================================
-           SECTION 4 : PORTOFOLIO (3 Kolom 1 Baris)
-        ======================================== */
-        .section-portofolio {
-            max-width: 1200px;
-            margin: 80px auto;
-            padding: 0 20px 60px;
-        }
-
-        .portofolio-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 30px;
-        }
-
-        .portofolio-card {
-            background: rgba(255, 255, 255, 0.05);
-            backdrop-filter: blur(10px);
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            border-radius: 20px;
-            overflow: hidden;
-            transition: all 0.3s ease;
-        }
-
-        .portofolio-card:hover {
-            transform: scale(1.03);
-            border-color: rgba(233, 69, 96, 0.5);
-            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.4);
-        }
-
-        .portofolio-image {
-            width: 100%;
-            height: 200px;
-            background: linear-gradient(135deg, #e94560, #0f3460);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 60px;
-        }
-
-        .portofolio-content {
-            padding: 25px;
-        }
-
-        .portofolio-content h3 {
-            font-size: 22px;
-            margin-bottom: 12px;
-            color: #fff;
-        }
-
-        .portofolio-content p {
-            font-size: 14px;
-            color: rgba(255, 255, 255, 0.6);
-            line-height: 1.7;
-            margin-bottom: 20px;
-        }
-
-        .portofolio-tags {
-            display: flex;
-            gap: 8px;
-            flex-wrap: wrap;
-        }
-
-        .tag {
-            padding: 6px 14px;
-            background: rgba(233, 69, 96, 0.2);
-            color: #e94560;
-            border-radius: 20px;
-            font-size: 12px;
-            font-weight: 500;
-        }
-
-        /* ========================================
-           FOOTER
-        ======================================== */
-        .footer {
-            background: rgba(0, 0, 0, 0.3);
-            padding: 30px;
-            text-align: center;
-            border-top: 1px solid rgba(255, 255, 255, 0.1);
-        }
-
-        .footer p {
-            color: rgba(255, 255, 255, 0.5);
-            font-size: 14px;
-        }
-
-        /* ========================================
-           RESPONSIVE
-        ======================================== */
-        @media (max-width: 992px) {
-            .header-content {
-                flex-direction: column;
-                text-align: center;
-            }
-
-            .header-text h1 {
-                font-size: 40px;
-            }
-
-            .header-image img {
-                width: 300px;
-                height: 300px;
-            }
-
-            .biodata-grid {
-                grid-template-columns: repeat(2, 1fr);
-                grid-template-rows: repeat(3, 1fr);
-            }
-
-            .portofolio-grid {
-                grid-template-columns: repeat(2, 1fr);
-            }
-        }
-
-        @media (max-width: 576px) {
-            .nav-links {
-                gap: 10px;
-            }
-
-            .nav-links a {
-                font-size: 14px;
-                padding: 6px 12px;
-            }
-
-            .header-text h1 {
-                font-size: 32px;
-            }
-
-            .biodata-grid {
-                grid-template-columns: 1fr;
-                grid-template-rows: repeat(6, 1fr);
-            }
-
-            .portofolio-grid {
-                grid-template-columns: 1fr;
-            }
-        }
-    </style>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-    <!-- ========================================
-         SECTION 1 : MENU
-    ======================================== -->
+    <!-- SECTION 1 : MENU -->
     <div class="section-menu">
         <div class="menu-container">
             <div class="logo">Wakaz</div>
@@ -371,9 +20,7 @@
         </div>
     </div>
 
-    <!-- ========================================
-         SECTION 2 : HEADER (Judul Kiri - Gambar Kanan)
-    ======================================== -->
+    <!-- SECTION 2 : HEADER -->
     <div class="section-header" id="header">
         <div class="header-content">
             <div class="header-text">
@@ -394,43 +41,40 @@
         </div>
     </div>
 
-    <!-- ========================================
-         SECTION 3 : BIODATA (6 Box - 2 Baris 3 Kolom)
-    ======================================== -->
+    <!-- SECTION 3 : BIODATA -->
     <div class="section-biodata" id="biodata">
         <h2 class="section-title">Tentang <span>Saya</span></h2>
         <div class="biodata-grid">
-            <!-- Box 1 -->
             <div class="biodata-box">
                 <div class="biodata-icon">👤</div>
                 <h3>Nama Lengkap</h3>
                 <p>Wahyu Kaswara</p>
             </div>
-            <!-- Box 2 -->
+
             <div class="biodata-box">
                 <div class="biodata-icon">📅</div>
                 <h3>Tanggal Lahir</h3>
                 <p>25 Januari 1997</p>
             </div>
-            <!-- Box 3 -->
+
             <div class="biodata-box">
                 <div class="biodata-icon">📍</div>
                 <h3>Alamat</h3>
                 <p>Batam, Indonesia</p>
             </div>
-            <!-- Box 4 -->
+
             <div class="biodata-box">
                 <div class="biodata-icon">🎓</div>
                 <h3>Pendidikan</h3>
                 <p>SMK Teknik komputer dan Infromatika</p>
             </div>
-            <!-- Box 5 -->
+
             <div class="biodata-box">
                 <div class="biodata-icon">💼</div>
                 <h3>Pekerjaan</h3>
                 <p>Fresh Graduate</p>
             </div>
-            <!-- Box 6 -->
+
             <div class="biodata-box">
                 <div class="biodata-icon">📧</div>
                 <h3>Email</h3>
@@ -439,13 +83,11 @@
         </div>
     </div>
 
-    <!-- ========================================
-         SECTION 4 : PORTOFOLIO (3 Kolom 1 Baris)
-    ======================================== -->
+    <!-- SECTION 4 : PORTOFOLIO -->
     <div class="section-portofolio" id="portofolio">
         <h2 class="section-title">Portofolio <span>Saya</span></h2>
         <div class="portofolio-grid">
-            <!-- Portofolio 1 -->
+
             <div class="portofolio-card">
                 <div class="portofolio-image">
                     <img src="Screenshot_1.png" alt="Website E-Commerce">
@@ -459,10 +101,10 @@
                     </div>
                 </div>
             </div>
-            <!-- Portofolio 2 -->
+
             <div class="portofolio-card">
                 <div class="portofolio-image">
-                    <img src="bca-mobile.jpg" alt="Aplikasi Mobile BCA">
+                    <img src="bca-mobile.jpg" alt="Aplikasi Mobile">
                 </div>
                 <div class="portofolio-content">
                     <h3>Aplikasi Mobile</h3>
@@ -473,7 +115,7 @@
                     </div>
                 </div>
             </div>
-            <!-- Portofolio 3 -->
+
             <div class="portofolio-card">
                 <div class="portofolio-image">
                     <img src="survey-analytics-nps_analytics-dashboard.png" alt="Dashboard Analytics">
@@ -487,16 +129,13 @@
                     </div>
                 </div>
             </div>
+
         </div>
     </div>
 
-    <!-- ========================================
-         FOOTER
-    ======================================== -->
     <div class="footer">
         <p>&copy; 2026 Wahyu Kaswara. All Rights Reserved.</p>
     </div>
-    
 
 </body>
 </html>
